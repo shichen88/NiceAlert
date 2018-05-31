@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>基于Bootstrap实现的Alert弹框组件</title>
+
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" >
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/NiceAlert.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+    <h2>基于Bootstrap实现的Alert弹框组件 - NiceAlert</h2>
+    <hr>
+    <p>
+        基于bootstrap3.3.5, JQuery1.10.2版本实现. 在使用NiceAlert之前，请确保正确引入了bootstrap.css, jquery.js和bootstrap.js.
+        并确保jquery.js在bootstrap.js之前引入
+    </p>
+    <p>
+        优点：
+        <ul>
+            <li>基于bootstrap, 样式精美</li>
+            <li>能够水平垂直居中显示5种不同类型的弹框</li>
+            <li>API简单, 如调用<strong>NiceAlert.warning("This is warning information!")</strong>即可生成警告弹框</li>
+        </ul>
+    </p>
+    <hr>
+    <h4>使用示例：</h4>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-success js-btn-success">"成功"弹框</button>
+                <button type="button" class="btn btn-info js-btn-info">"信息"弹框</button>
+                <button type="button" class="btn btn-warning js-btn-warning">"警告"弹框</button>
+                <button type="button" class="btn btn-danger js-btn-error">"错误"弹框</button>
+                <button type="button" class="btn btn-primary js-btn-confirm">"确认"弹框</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        $(".js-btn-success").click(function () {
+            NiceAlert.success("This is a Success alert.", function () {
+                console.log("Success alert is hidden...");
+            });
+        });
+
+        $(".js-btn-info").click(function () {
+            NiceAlert.info("This is a info alert.", function () {
+                console.log("Info alert is hidden...");
+            });
+        });
+
+        $(".js-btn-warning").click(function () {
+            NiceAlert.warning("This is a warning alert.", function () {
+                console.log("Warning alert is hidden...");
+            });
+        });
+
+        $(".js-btn-error").click(function () {
+            NiceAlert.error("This is a error alert.", function () {
+                console.log("Error Alert is hidden...");
+            });
+        });
+
+        $(".js-btn-confirm").click(function () {
+            NiceAlert.confirm("Are you sure to do this?", function () {
+                console.log("Ok click...");
+            }, function () {
+                console.log("Cancel click...");
+            });
+        });
+    });
+</script>
+</body>
+</html>
