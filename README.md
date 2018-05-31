@@ -4,6 +4,7 @@
 * 基于bootstrap, 样式精美
 * 能够水平垂直居中显示5种不同类型的弹框
 * API简单, 如调用`NiceAlert.warning("This is warning information!")`即可生成警告弹框
+* 可通过参数配置弹出框的标题、内容、事件
 #### "成功"弹框：
 ![avatar](https://github.com/shichen88/NiceAlert/blob/master/NicePop/img/success.jpg)
 #### "信息"弹框：
